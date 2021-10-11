@@ -1,0 +1,46 @@
+.input {
+  width: 70%;
+
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+  font-family: "EB Garamond";
+  font-size: 64px;
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.input:focus {
+  outline: none !important;
+  width: 75%;
+}
+::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: white;
+  opacity: 0.4; /* Firefox */
+}
+
+:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: white;
+  opacity: 0.4;
+}
+
+::-ms-input-placeholder {
+  /* Microsoft Edge */
+  color: white;
+  opacity: 0.4;
+}
+
+@media screen and (max-width: 1000px) {
+  .input {
+    font-size: 48px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .input {
+    font-size: 30px;
+    width: 80%;
+  }
+}

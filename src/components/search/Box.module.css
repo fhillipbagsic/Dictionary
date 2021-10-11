@@ -1,0 +1,68 @@
+.box {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: flex-start;
+  max-width: 400px;
+  overflow-y: auto;
+}
+
+.title {
+  color: var(--gray-1);
+  text-transform: uppercase;
+  font-family: Montserrat;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.word {
+  color: var(--violet);
+  font-family: "EB Garamond";
+  font-size: 48px;
+  font-weight: 500;
+}
+
+.phonetics {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.phonetics_text {
+  color: var(--gray-1);
+  font-family: "EB Garamond";
+  font-style: italic;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.speech {
+  color: var(--gray-3);
+  font-family: Montserrat;
+  font-size: 20px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.definition {
+  color: var(--gray-3);
+  font-family: "EB Garamond";
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.readMore {
+  color: var(--violet);
+  border: none;
+  background: transparent;
+  font-family: Montserrat;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 1000px) {
+  .box {
+    max-width: 100%;
+  }
+}
