@@ -1,0 +1,51 @@
+.container {
+  height: 100%;
+}
+
+.search_container {
+  height: 50%;
+  background: var(--violet);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+.search_container:focus-within {
+  height: 100%;
+}
+
+.word_container {
+  height: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.box_container {
+  margin-top: -50px;
+  background-color: white;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 80px;
+  padding: 60px;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+@media screen and (max-width: 1000px) {
+  .search_container {
+    height: 40%;
+  }
+  .box_container {
+    margin-top: 0;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .search_container {
+    height: 30%;
+  }
+}
