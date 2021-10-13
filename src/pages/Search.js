@@ -3,7 +3,7 @@ import Input from "../components/search/Input";
 import styles from "./Search.module.css";
 function Search() {
   return (
-    <div className={styles.container}>
+    <>
       <div className={styles.search_container}>
         <Input />
       </div>
@@ -13,7 +13,7 @@ function Search() {
           <Box />
         </div>
       </div>
-    </div>
+    </>
   );
 }
 

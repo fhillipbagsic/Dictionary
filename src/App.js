@@ -8,6 +8,7 @@ function App() {
       <Switch>
         <Route path="/" exact component={Search} />
         <Route path="/search" component={Result} />
+        {/* react helmet */}
       </Switch>
     </BrowserRouter>
   );

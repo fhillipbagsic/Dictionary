@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { Redirect } from "react-router";
 import styles from "./Input.module.css";
 function Input() {
   const [word, setWord] = useState("");
