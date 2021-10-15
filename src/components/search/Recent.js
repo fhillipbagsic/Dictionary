@@ -1,5 +1,5 @@
-import { useLayoutEffect } from "react";
-import { useState } from "react/cjs/react.development";
+import { useLayoutEffect, useState } from "react";
+
 import styles from "./Box.module.css";
 
 function Recent() {
