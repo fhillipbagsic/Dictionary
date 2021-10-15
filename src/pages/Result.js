@@ -3,68 +3,40 @@ import Input from "../components/result/Input";
 import Tabs from "../components/result/Tabs";
 import Definition from "../components/result/Definition";
 import { useLocation } from "react-router";
-import { useEffect, useState } from "react";
+import { createContext, useEffect, useState } from "react";
+import fetchData from "../components/utils";
 
-function Result({ meanings }) {
+const DataContext = createContext(null);
+
+function Result() {
   const { search } = useLocation();
-  const searchWord = search.split("=")[1];
+  const [definitions, setDefinitions] = useState(null);
+  const word = search.split("=")[1];
+
+  useEffect(() => {
+    fetchData(word).then((result) => {
+      if (result) {
+        setDefinitions(result);
+
+        localStorage.setItem("word", word);
+        localStorage.setItem("definitions", result);
+      }
+    });
+  }, []);
 
   return (
-    <>
+    <DataContext.Provider value={{ definitions }}>
       <div className={styles.search_container}>
-        <Input term={searchWord} />
+        <Input term={word} />
         {/* <Tabs /> */}
       </div>
+
       <div className={styles.box_container}>
-        <Definition meanings={data} />
-        {/* <Definition meanings={data} /> */}
+        <Definition />
       </div>
-    </>
+    </DataContext.Provider>
   );
 }
 
+export { DataContext };
 export default Result;
-
-const data = [
-  {
-    partOfSpeech: "exclamation",
-    definitions: [
-      {
-        definition: "Used as a greeting or to begin a phone conversation.",
-        example: "hello there, Katie!",
-      },
-      {
-        definition: "Used as a greeting or to begin a phone conversation.",
-        example: "hello there, Katie!",
-      },
-    ],
-  },
-  {
-    partOfSpeech: "noun",
-    definitions: [
-      {
-        definition: "An utterance of “hello”; a greeting.",
-        example: "she was getting polite nods and hellos from people",
-        synonyms: [
-          "greeting",
-          "welcome",
-          "salutation",
-          "saluting",
-          "hailing",
-          "address",
-          "hello",
-          "hallo",
-        ],
-      },
-    ],
-  },
-  {
-    partOfSpeech: "intransitive verb",
-    definitions: [
-      {
-        definition: "Say or shout “hello”; greet someone.",
-        example: "I pressed the phone button and helloed",
-      },
-    ],
-  },
-];

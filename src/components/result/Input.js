@@ -9,12 +9,24 @@ function Input(props) {
     setWord(props.term);
   }, []);
 
+  const onWordChange = (e) => {
+    setWord(e.target.value);
+  };
+
+  const onWordPress = (e) => {
+    if (e.key === "Enter") {
+      window.location = `/search?word=${word}`;
+    }
+  };
+
   return (
     <input
       className={styles.input}
       type="text"
       placeholder="What would you like to search?"
       value={word}
+      onChange={onWordChange}
+      onKeyPress={onWordPress}
     />
   );
 }
