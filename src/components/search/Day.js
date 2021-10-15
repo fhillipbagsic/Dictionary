@@ -1,6 +1,11 @@
+import { useLayoutEffect } from "react";
 import styles from "./Box.module.css";
 
-function Box() {
+function Day() {
+  console.log(localStorage.getItem("recent"));
+
+  useLayoutEffect(() => {}, []);
+
   return (
     <article className={styles.box}>
       <h3 className={styles.title}>Word of the day</h3>
@@ -26,4 +31,4 @@ function Box() {
   );
 }
 
-export default Box;
+export default Day;
