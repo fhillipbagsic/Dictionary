@@ -9,7 +9,7 @@ function Recent() {
   useLayoutEffect(() => {
     const word = localStorage.getItem("word");
     const definitions = localStorage.getItem("definitions");
-    if (word) {
+    if (word && definitions) {
       setWord(word);
       setDefinitions(JSON.parse(definitions));
     }
