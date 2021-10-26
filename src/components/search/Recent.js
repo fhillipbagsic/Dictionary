@@ -11,7 +11,7 @@ function Recent() {
     const definitions = localStorage.getItem("definitions");
     if (word) {
       setWord(word);
-      setDefinitions(definitions);
+      setDefinitions(JSON.parse(definitions));
     }
   }, []);
 
@@ -21,15 +21,16 @@ function Recent() {
         <h3 className={styles.title}>Recent Search</h3>
         <h2 className={styles.word}>{word.toLowerCase()}</h2>
         <div className={styles.phonetics}>
-          <p className={styles.phonetics_text}>/həˈloʊ/</p>
+          <p className={styles.phonetics_text}>{definitions.phonetic}</p>
         </div>
-        <p className={styles.speech}>noun</p>
+        <p className={styles.speech}>{definitions.meanings[0].partOfSpeech}</p>
         <p className={styles.definition}>
-          an internationally important city inhabited by many different peoples
-          reflecting a great variety of cultures, attitudes, etc.
+          {definitions.meanings[0].definitions[0].definition}
         </p>
 
-        <button className={styles.readMore}>Read more</button>
+        <a href={`/search?word=${word}`} className={styles.readMore}>
+          Read more
+        </a>
       </article>
     )
   );

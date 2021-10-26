@@ -7,7 +7,7 @@ function Input(props) {
   useEffect(() => {
     console.log(props.term);
     setWord(props.term);
-  }, []);
+  }, [props.term]);
 
   const onWordChange = (e) => {
     setWord(e.target.value);
