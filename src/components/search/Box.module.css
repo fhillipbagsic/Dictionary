@@ -3,6 +3,7 @@
   flex-direction: column;
   gap: 15px;
   align-items: flex-start;
+  width: 400px;
   max-width: 400px;
   overflow-y: auto;
 }
